@@ -74,10 +74,11 @@ def menu_funciones_basicas():
     print("\n--- Funciones básicas ---")
 
     # TODO: descomenta cuando hayas completado calcular_iva
-    # valor = 1_500_000
-    # iva = calcular_iva(valor)
-    # mostrar_resultado("IVA sobre $1,500,000", iva)
-
+    valor = 800000
+    iva = calcular_iva(valor)
+    
+    mostrar_resultado(f"IVA sobre ${valor:,.0f}", iva)
+                      
     # TODO: descomenta cuando hayas completado formatear_reporte_valor
     # linea = formatear_reporte_valor("900123456", "Empresa ABC S.A.S.", 1_500_000, "ACTIVO")
     # print(f"  Reporte: {linea}")
@@ -321,6 +322,7 @@ def main():
                 input("\n  Presiona Enter para volver al menu...")
         else:
             print(f"\n  Opcion '{opcion}' no reconocida. Intenta de nuevo.")
+
 
 
 if __name__ == "__main__":

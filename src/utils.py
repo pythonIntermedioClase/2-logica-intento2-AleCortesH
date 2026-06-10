@@ -110,6 +110,10 @@ def calcular_iva(valor_base, tasa=0.19):
     # TODO:
     # 1. Multiplica valor_base por tasa y guarda el resultado en una
     #    variable llamada iva.
+    
+    return valor_base* tasa
+        
+ 
     # 2. Retorna iva.
     pass
 
@@ -152,6 +156,8 @@ def mostrar_resultado(etiqueta, valor):
         valor (float): Valor numérico a mostrar.
     """
     # TODO:
+    print(f"{etiqueta} : ${valor:,.0f}")
+    
     # 1. Imprime usando print() y un f-string con este formato:
     #    "  {etiqueta}: ${valor:,.0f}"
     #    (el ,.0f formatea el número con separadores de miles y sin decimales)
