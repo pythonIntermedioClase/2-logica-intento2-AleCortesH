@@ -229,6 +229,10 @@ def limpiar_nit(nit):
     # TODO:
     # 1. Elimina los guiones del nit con .replace("-", "") y guarda el
     #    resultado en una variable llamada sin_guiones.
+    limpiar_nit = nit.replace("-", "")
+    print(nit_limpio)
+    
+
     # 2. Elimina los puntos de sin_guiones con .replace(".", "") y guarda
     #    el resultado en una variable llamada sin_puntos.
     # 3. Retorna sin_puntos.
@@ -362,9 +366,14 @@ def esta_al_dia(dias_mora):
     """
     # TODO:
     # 1. Escribe un if/else:
+
+    if dias_mora == 0:
+        return True
+    else:
+        return False
     #    - si dias_mora == 0: retorna True
     #    - de lo contrario: retorna False
-    pass
+
 
 
 def aplicar_descuento(valor, pago_voluntario):
