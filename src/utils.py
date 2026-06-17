@@ -430,8 +430,13 @@ def asignar_prioridad(valor, tiene_historial_incumplimiento):
     #    - si valor_alto AND tiene_historial: retorna "ALTA"
     #    - si valor_alto OR tiene_historial: retorna "MEDIA"
     #    - de lo contrario: retorna "BAJA"
-    pass
-
+    valor_alto = valor >1000000
+    if valor_alto and tiene_historial_incumplimiento:
+        return "ALTA"
+    elif valor_alto or tiene_historial_incumplimiento:
+        return "MEDIA"
+    else:
+        return "BAJA"
 
 # ---------------------------------------------------------------------------
 # CONDICIONALES ANIDADOS

@@ -128,10 +128,10 @@ def menu_condicionales_simples():
     mostrar_resultado("Sin descuento", sin_descuento)
 
     # TODO: descomenta cuando hayas completado asignar_prioridad
-    # casos = [(2_000_000, True), (2_000_000, False), (500_000, True), (500_000, False)]
-    # for valor, historial in casos:
-    #     prioridad = asignar_prioridad(valor, historial)
-    #     print(f"  ${valor:,} / historial={historial} → {prioridad}")
+    casos = [(2_000_000, True), (2_000_000, False), (500_000, True), (500_000, False)]
+    for valor, historial in casos:
+        prioridad = asignar_prioridad(valor, historial)
+        print(f"  ${valor:,} / historial={historial} → {prioridad}")
     pass
 
 
