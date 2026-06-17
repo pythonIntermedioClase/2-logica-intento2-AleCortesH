@@ -393,6 +393,11 @@ def aplicar_descuento(valor, pago_voluntario):
     """
     # TODO:
     # 1. Si pago_voluntario es True:
+    if pago_voluntario == True:
+        descuento = valor * 0.10
+        valor_con_descuento = valor - descuento
+        return valor_con_descuento
+    return valor
     #    - Calcula el descuento: descuento = valor * 0.10
     #    - Calcula el valor final: valor_con_descuento = valor - descuento
     #    - Retorna valor_con_descuento
