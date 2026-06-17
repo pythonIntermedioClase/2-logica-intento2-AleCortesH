@@ -659,12 +659,21 @@ def imprimir_nits_validos(nits):
     """
     # TODO:
     # 1. Imprime el encabezado: print("NITs válidos:")
+    print("NITs válidos:")
     # 2. Inicializa un contador: contador = 1
+    contador = 1
+    total = len(nits)
+    
     # 3. Recorre la lista con: for nit in nits:
     #    - Llama a validar_nit(nit)
     #    - Si es válido: imprime "  {contador}. {nit}"
     #      e incrementa: contador = contador + 1
-    pass
+    for nit in nits:
+        if validar_nit(nit):
+            print(f"  NIT válido {contador}. {nit}")
+            contador = contador + 1
+    print(f"  Total válidos: {contador} de {total}")
+   
 
 
 def calcular_totales(valores):
@@ -687,13 +696,21 @@ def calcular_totales(valores):
     """
     # TODO:
     # 1. Inicializa el acumulador: total = 0
+    total = 0
     # 2. Inicializa el máximo con el primer elemento: maximo = valores[0]
     #    (así tenemos un valor real con el que comparar en el ciclo)
+    maximo = valores[0]
     # 3. Recorre con: for valor in valores:
     #    - Acumula: total = total + valor
     #    - Actualiza el máximo: si valor > maximo, haz maximo = valor
+    for valor in valores:
+        total = total + valor
+        if valor > maximo:
+            maximo = valor
     # 4. Calcula el promedio: promedio = total / len(valores)
+    promedio = total / len(valores)
     # 5. Retorna total, promedio, maximo (los tres en esa línea)
+    return total, promedio, maximo
     pass
 
 
@@ -718,13 +735,19 @@ def generar_periodos_multiple(anio_inicio, anio_fin, meses_por_anio=12):
     """
     # TODO:
     # 1. Crea una lista vacía: periodos = []
+    periodos = []
     # 2. Ciclo externo: for anio in range(anio_inicio, anio_fin + 1):
     #    (el +1 es para que anio_fin quede incluido)
+    for anio in range(anio_inicio, anio_fin + 1):
     # 3. Ciclo interno: for mes in range(1, meses_por_anio + 1):
     #    - Construye el código: codigo = f"{anio}{mes:02d}"
     #      (el :02d formatea el mes con cero a la izquierda: 1 -> "01")
     #    - Agrega a la lista: periodos.append(codigo)
+        for mes in range(1, meses_por_anio + 1):
+            codigo = f"{anio}{mes:02d}"
+            periodos.append(codigo)
     # 4. Retorna periodos
+    return periodos
     pass
 
 
@@ -744,12 +767,18 @@ def buscar_primer_valido(nits):
     """
     # TODO:
     # 1. Inicializa el índice: indice = 0
+    indice = 0
     # 2. Escribe: while indice < len(nits):
     #    - Extrae el elemento: nit = nits[indice]
     #    - Si validar_nit(nit) es True: retorna nit
     #    - Incrementa: indice = indice + 1
     #      (esta línea va SIEMPRE dentro del while, válido o no)
+    while indice < len(nits):
+        nit = nits[indice]
+        indice = indice + 1
+
     # 3. Si el while termina sin retornar: retorna None
+    return None
     pass
 
 
